@@ -7,10 +7,10 @@ contactsApp.config(['$locationProvider', '$routeProvider', '$httpProvider', func
   // $log.log("contactsApp Called");
   $locationProvider.hashPrefix('');
     $routeProvider.when('/home', {
-      controller: 'homeController as home',
+      controller: 'homeController',
 	    templateUrl: 'components/home/home.tpl.html'
    }).when('/contact', {
-    controller: 'contactController as c',
+    controller: 'contactController',
     templateUrl: 'components/contact/contact.tpl.html'
   }).   otherwise({
     redirectTo: '/home',

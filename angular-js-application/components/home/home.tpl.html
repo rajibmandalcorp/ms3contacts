@@ -17,41 +17,51 @@
       <img ng-src="images/snowballmig.png" height="45" width="300"></img>
       <font size="5"><b>MS3 Contacts</b></font>
   </header>
+
   <div class="container" style="padding:10px 10px;">
     <form ng-submit="OnAddNew()">
-    <table class="table table-bordered" id="tbl_employees">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Title</th>
-          <th>City</th>
-          <th>Contacts Email</th>
-          <th>Ph.#</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody id="tbl_posts_body">
-        <tr ng-repeat="contact in contacts track by $index">
-          <td><span class="sn">{{emp.id}}</span>.</td>
-          <td>{{contact.Name}}</td>
-          <td>{{contact.Title}}</td>
-          <td>{{contact.City}}</td>
-          <td>{{contact.Email}}</td>
-          <td>{{contact.Ph}}</td>
-          <td><a class="btn btn-xs delete-record" ng-click="remove(contact)"><i
-                class="glyphicon glyphicon-trash"></i></a>
-            <a class="btn btn-xs edit-record" ng-click="edit(contact)"><i class="glyphicon glyphicon-edit"></i></a>
-          </td>
+      <div><input type="text" ng-model="searchText" placeholder="Enter Search Text" /></div>
+       <table class="table table-bordered" id="tbl_employees">
+        <thead>
+          <tr>
+            <th ng-click='sortColumn("Name")' ng-class='sortClass("Name")'>Name
+            </th>
 
-        </tr>
-      </tbody>
-    </table>
-    <div class="form-group">
+            <th ng-click='sortColumn("Title")' ng-class='sortClass("Title")'>Title
+            </th>
+
+            <th ng-click='sortColumn("City")' ng-class='sortClass("City")'>City
+            </th>
+
+            <th ng-click='sortColumn("Email")' ng-class='sortClass("Email")'>Contacts Email
+            </th>
+
+            <th ng-click='sortColumn("Ph")' ng-class='sortClass("Ph")'>Ph.#
+            </th>
+
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbl_posts_body">
+          <tr ng-repeat="contact in contacts|orderBy:column:reverse|filter:searchText">
+            <td>{{contact.Name}}</td>
+            <td>{{contact.Title}}</td>
+            <td>{{contact.City}}</td>
+            <td>{{contact.Email}}</td>
+            <td>{{contact.Ph}}</td>
+            <td><a class="btn btn-xs delete-record" ng-click="remove(contact)"><i
+                  class="glyphicon glyphicon-trash"></i></a>
+              <a class="btn btn-xs edit-record" ng-click="edit(contact)"><i class="glyphicon glyphicon-edit"></i></a>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+      <div class="form-group">
         <input type="submit" class="btn btn-primary OnAddNew pull-right" value="Add New">
-    </div>
-   </form>
- </div>
+      </div>
+    </form>
+  </div>
 
 </body>
 
@@ -82,4 +92,36 @@
   th {
     border: solid 1px #CCC;
   }
+  /*table */
+table{
+ border-collapse: collapse;
+}
+table th,table td{
+ padding: 3px;
+}
+
+table th:hover{
+ cursor: pointer;
+}
+
+.arrow-down:after,.arrow-up:after{
+ content: ' ';
+ position: relative;
+ left: 2px;
+ border: 8px solid transparent;
+}
+
+.arrow-down:after{
+ top: 10px;
+ border-top-color: black;
+}
+
+.arrow-up:after{
+ bottom: 15px;
+ border-bottom-color: black;
+}
+
+.arrow-down,.arrow-up{
+ padding-right: 10px;
+}
 </style>
