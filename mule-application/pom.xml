@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>49305d74-8045-4ad0-b7f7-f629da1c6628</groupId>
-	<artifactId>sys-api-MySQL-application</artifactId>
+	<artifactId>rdms-sys-api-application</artifactId>
     <version>1.0.0</version>
-    <packaging>mule-application</packaging>
+    <packaging>rdms-sys-api-application</packaging>
 
 	<name>rdms-sys-api-application</name>
 
