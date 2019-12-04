@@ -26,7 +26,7 @@ Code Github  repository - https://github.com/rajibmandalcorp/ms3contacts
 		1. Hosted the Web application in **freeasphost.net**.  The application is using Mule Cloud API to access the remotemysql.com  
 	1. Unit Test cases -  Used Maven test suite - Please go through Mule application document for MUnit Testing https://docs.google.com/document/d/1MuDJ2t9lJ8aVfm3URbooEvX3AkvRnPbJhh0pAswWsew/edit?usp=sharing
 	
-![GitHub Logo](/images/cloud.jpg)
+
 	
 
 		
