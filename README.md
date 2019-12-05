@@ -15,6 +15,7 @@ Code Github  repository - https://github.com/rajibmandalcorp/ms3contacts
 	
 1. **“Nice to Have” Requirements:**
 	1. UI/Web Application - In AngularJs based application is hosted in http://rajibm.freeasphost.net/#/home to show all CRUD operations. 
+	Please white list http://rajibm.freeasphost.net if you are using chrome browser. 
 
 1. **“Bonus Requirements:**
 	1. Contact sorting in UI - Please check in  http://rajibm.freeasphost.net/#/home
